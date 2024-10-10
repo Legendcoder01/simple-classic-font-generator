@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Classic Font Generator: Enter your text and preview it in classic fonts.">
+    <meta name="keywords" content="font generator, classic fonts, typography, text styling, web fonts">
+    <meta name="author" content="Your Name">
+    <title>Classic Font Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        #output {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Classic Font Generator</h1>
+    <textarea id="userInput" rows="4" placeholder="Enter your text here..."></textarea>
+    <br>
+    <label for="fontSelect">Choose a classic font:</label>
+    <select id="fontSelect" onchange="applyFont()">
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Times New Roman', Times, serif">Times New Roman</option>
+        <option value="Palatino, serif">Palatino</option>
+        <option value="Garamond, serif">Garamond</option>
+        <option value="'Courier New', Courier, monospace">Courier New</option>
+    </select>
+    <div id="output"></div>
+</div>
+
+<script>
+    function applyFont() {
+        const text = document.getElementById('userInput').value;
+        const font = document.getElementById('fontSelect').value;
+        const output = document.getElementById('output');
+        output.style.fontFamily = font;
+        output.innerText = text;
+    }
+
+    document.getElementById('userInput').addEventListener('input', applyFont);
+</script>
+
+</body>
+</html>
